@@ -1,0 +1,54 @@
+<?php
+
+#Constants: These are values that can't change when they are defined
+
+echo 'Hello, my name is Constant!';
+
+$firstName = 'Gio';
+$firstName = 'Joe';
+
+echo $firstName;
+
+# There are 2 ways to define constants
+# using the function 'define' which accepts two parameters which are the name and the value
+# define('name', 'value'); By convention, constants are defined in uppercase\
+define('STATUS_PAID', 'paid'); # It is defined at run time
+
+# define('STATUS_PAID', 1). It won't work
+
+echo STATUS_PAID; #when referencing constants, you don't need '$' sign
+
+# To check whether the constant has been defined
+echo defined('STATUS_PAID'); # returns a boolean true or false
+echo defined('STATUS_VOID'); # empty meaning it is not defined 
+
+# We can also define constants by using the 'const' keyword
+const STATUS_VOID = 'void'; # It is defined at compile time
+
+echo STATUS_VOID; 
+
+// You can't define constant using the 'const' keyword in control structures like loops or if else
+// But you could define constants using the 'define'
+if (true) {
+    # const FOO = 'har'; This will not work
+    define('STATUS_PAYING', 9);
+}
+
+$paid = 'PAY';
+define('STATUS_' . $paid, 4);
+
+echo STATUS_PAY;
+
+echo PHP_ROUND_HALF_DOWN;
+
+# Magic constants
+echo __FILE__;
+echo __LINE__;
+
+# Variable Variables: It takes the value of a variable and treats as the name of the new variable
+$foo = 'bar';
+$$foo = 'baz'; # $bar = 'baz'
+
+echo $foo, $bar, $$foo;
+echo "$foo, {$$foo}";
+echo "$foo, ${$foo}";
