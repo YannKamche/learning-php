@@ -1,0 +1,30 @@
+<?php
+
+/** FLOAT */
+$x = 12_000.6e3;
+echo $x;
+
+echo PHP_FLOAT_MAX;
+echo PHP_FLOAT_MIN;
+
+$x = floor((0.1 + 0.7) * 10); # float rounds down
+$x = ceil((0.1 + 0.7) * 10 ); # ceil rounds up
+
+echo '<br />' . $x;
+
+// Never compare floats
+$x = 0.23;
+$y = 1 - 0.77;
+
+var_dump($x, $y);
+
+if ($x == $y) {
+    echo 'Yes';
+} else {
+    echo 'No';
+}
+
+$x = PHP_FLOAT_MAX * 2;
+
+echo '<br />';
+var_dump($x);
