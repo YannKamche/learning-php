@@ -1,0 +1,14 @@
+<?php
+
+/**INTEGERS */
+echo PHP_INT_MAX;
+
+echo '<br />';
+
+$binary = 0b110;
+$hex = 0x0A;
+
+echo $binary . '<br />'. $hex;
+
+$number = 2_000_000_000;
+echo '<br />'. $number;
