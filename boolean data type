@@ -1,0 +1,32 @@
+<?php
+
+/* BOOLEANS */
+
+$isComplete = true;
+
+// integers 0 -0 = false
+// floats 0.0 -0.0 = false
+// '' = false
+// '0' = false
+// [] = false
+// null = false
+
+echo $isComplete; // result is 1 if it is true, but an empty string if it is false
+# The reason why php does that is because when you try to print something, it will cast it
+# into a string. so it's essentially doing the same thing like
+# echo (string) $isComplete
+
+# when booleans is cast into an string, false becomes an empty string and true evaluates to 1
+
+if($isComplete)
+ {
+    //do something
+    echo 'success';
+ } else {
+    // do something else
+    echo 'fail';
+ }
+
+ is_bool($isComplete);
+ echo '</br>';
+ var_dump(is_bool($isComplete));
